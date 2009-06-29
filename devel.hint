@@ -1,5 +1,5 @@
 category: Libs
-requires: cygwin gettext
+requires: gettext
 external-source: libgpg-error
 sdesc: "GnuPG error code library (development)"
 ldesc: "This is a library that defines common error values for all GnuPG 

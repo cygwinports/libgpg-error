@@ -1,5 +1,5 @@
 category: Libs
-requires: cygwin libgpg-error0 libintl8
+requires: libgpg-error0 libintl8
 sdesc: "GnuPG error code library (utilities)"
 ldesc: "This is a library that defines common error values for all GnuPG 
 components.  Among these are GPG, GPGSM, GPGME, GPG-Agent, libgcrypt, 
