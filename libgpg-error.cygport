@@ -1,0 +1,18 @@
+NAME="libgpg-error"
+VERSION=1.10
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="GnuPG error code library"
+DESCRIPTION="This is a library that defines common error values for all GnuPG
+components.  Among these are GPG, GPGSM, GPGME, GPG-Agent, libgcrypt, Libksba,
+DirMngr, Pinentry, SmartCard Daemon and more."
+HOMEPAGE="http://www.gnupg.org/related_software/libgpg-error/"
+SRC_URI="ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-${VERSION}.tar.bz2
+	 ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-${VERSION}.tar.bz2.sig"
+
+PKG_NAMES="${NAME} ${NAME}0 ${NAME}-devel"
+libgpg_error_CONTENTS='--exclude=aclocal usr/bin/*.exe usr/share/'
+libgpg_error0_CONTENTS="usr/bin/cyggpg-error-0.dll"
+libgpg_error_devel_CONTENTS='usr/bin/*-config usr/include/ usr/lib/ usr/share/aclocal/'
+
+MAKEOPTS+=" no_undefined=-no-undefined"
