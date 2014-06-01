@@ -1,5 +1,5 @@
 NAME="libgpg-error"
-VERSION=1.10
+VERSION=1.12
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="GnuPG error code library"
