@@ -1,5 +1,5 @@
 NAME="libgpg-error"
-VERSION=1.12
+VERSION=1.18
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="GnuPG error code library"
@@ -9,10 +9,14 @@ DirMngr, Pinentry, SmartCard Daemon and more."
 HOMEPAGE="http://www.gnupg.org/related_software/libgpg-error/"
 SRC_URI="ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-${VERSION}.tar.bz2
 	 ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-${VERSION}.tar.bz2.sig"
+PATCH_URI="1.18-cygwin-parallel-make.patch"
 
 PKG_NAMES="${NAME} ${NAME}0 ${NAME}-devel"
-libgpg_error_CONTENTS='--exclude=aclocal usr/bin/*.exe usr/share/'
-libgpg_error0_CONTENTS="usr/bin/cyggpg-error-0.dll"
-libgpg_error_devel_CONTENTS='usr/bin/*-config usr/include/ usr/lib/ usr/share/aclocal/'
+libgpg_error_CATEGORY="_obsolete"
+libgpg_error_REQUIRES="libgpg-error-devel"
+libgpg_error0_CONTENTS="usr/bin/cyggpg-error-0.dll usr/share/doc/ usr/share/locale/"
+libgpg_error_devel_CONTENTS="usr/bin/gpg-error* usr/include/ usr/lib/
+	usr/share/aclocal/ usr/share/info/ usr/share/man/man1/"
 
+CYGCONF_ARGS="--disable-languages"
 MAKEOPTS+=" no_undefined=-no-undefined"
