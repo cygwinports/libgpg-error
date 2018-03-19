@@ -1,5 +1,5 @@
 NAME="libgpg-error"
-VERSION=1.27
+VERSION=1.28
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="GnuPG error code library"
@@ -13,9 +13,21 @@ SRC_URI="ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-${VERSION}.tar.bz2
 PKG_NAMES="${NAME} ${NAME}0 ${NAME}-devel"
 libgpg_error_CATEGORY="_obsolete"
 libgpg_error_REQUIRES="libgpg-error-devel"
-libgpg_error0_CONTENTS="usr/bin/cyggpg-error-0.dll usr/share/doc/ usr/share/locale/"
-libgpg_error_devel_CONTENTS="usr/bin/gpg-error* usr/include/ usr/lib/
-	usr/share/aclocal/ usr/share/info/ usr/share/man/man1/"
+libgpg_error0_CONTENTS="
+	usr/bin/cyggpg-error-0.dll
+	usr/share/doc/${NAME}
+	usr/share/locale/*/LC_MESSAGES/libgpg-error.mo
+"
+libgpg_error_devel_CONTENTS="
+	usr/bin/gpg-error.exe
+	usr/bin/*-config
+	usr/bin/yat2m.exe
+	usr/include/gpg*.h
+	usr/lib/libgpg-error.dll.a
+	usr/share/aclocal/gpg*.m4
+	usr/share/info/gpgrt.info*
+	usr/share/man/man1/
+"
 
 DIFF_EXCLUDES="VERSION *.asd"
 
